@@ -477,7 +477,7 @@ const AllDrivers = () => {
   };
   return (
     <Container>
-      <Heading>All Drivers</Heading>
+      <Heading>All Customer</Heading>
       <Tabs defaultValue="list-view" className="w-full rounded-md">
         <TabsList className="w-[340px] rounded-md">
           <TabsTrigger value="list-view" className="w-full rounded-md">
@@ -583,39 +583,29 @@ const AllDrivers = () => {
           {driversData.map((_, i) => {
             return (
               <Card key={i + "-grid-view"} className="p-2.5">
-                <CardHeader className="flex flex-col items-center text-center">
-                  <CardTitle>{_.name}</CardTitle>
-                  <CardDescription>{_.no_of_trips} Trips</CardDescription>
-                </CardHeader>
+            
                 <CardDescription className="mt-5 bg-slate-100 rounded-md px-2.5 pt-2.5 pb-5 flex flex-col gap-2.5 items-center z-10 relative">
                   <Avatar className="w-20 h-20 -mt-11 z-20 relative border-[4px] border-white">
                     <AvatarImage src={_.profile_pic} alt={_.name} />
                     <AvatarFallback>{_.name.split(" ")[0][0]}</AvatarFallback>
                   </Avatar>
-                  <div className="flex gap-1.5 justify-center">
-                    {Array(5)
-                      .fill(0)
-                      .map((x, i) => {
-                        return (
-                          <Star
-                            key={i + "-star"}
-                            className={cn(
-                              "w-5 h-5",
-                              _.rating <= i
-                                ? "fill-gray-300 stroke-gray-300"
-                                : "fill-black stroke-black"
-                            )}
-                          />
-                        );
-                      })}
-                  </div>
                   <CardDescription className="text-base text-black">
-                    {_.address}
+                    <CardTitle>{_.name}</CardTitle>
                   </CardDescription>
                   <CardDescription className="text-sm break-keep">
-                    {_.phone_number}
+                    {_.address}
                   </CardDescription>
                 </CardDescription>
+                <CardHeader className="flex flex-col items-center text-center">
+                <CardDescription>Contact Number:- <br/>
+                 {_.phone_number} </CardDescription>
+                 <CardDescription>Email:- <br/>
+                 {_.email}
+                  </CardDescription>
+                </CardHeader>
+                <button className="btn btn-info" style={{margin: "20px"}}>Edit</button>
+                <button className="btn btn-success">Delete</button>
+
               </Card>
             );
           })}

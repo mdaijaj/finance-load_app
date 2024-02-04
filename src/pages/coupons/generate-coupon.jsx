@@ -77,9 +77,11 @@ const GenerateCoupons = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
+
+
   return (
     <Container>
-      <Heading>Generate Coupons</Heading>
+      <Heading>User Information</Heading>
       <Container
         className={"rounded-md border border-gray-100 p-2.5 gap-1.5 bg-gray-50"}
       >
@@ -90,10 +92,23 @@ const GenerateCoupons = () => {
           >
             <FormField
               control={form.control}
-              name="couponCode"
+              name="contact_number"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel>Coupon Code</FormLabel>
+                  <FormLabel>Contact Number*</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+             <FormField
+              control={form.control}
+              name="salusation"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>Salusation*</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -103,38 +118,26 @@ const GenerateCoupons = () => {
             ></FormField>
             <FormField
               control={form.control}
-              name="couponType"
+              name="full_name"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel>
-                    Coupon Type <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select Coupon type" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="flat">Flat</SelectItem>
-                      <SelectItem value="percentage">Percentage</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <FormLabel>Full Name</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             ></FormField>
-            <FormField
+            
+             <FormField
               control={form.control}
-              name="couponAmount"
+              name="father_name"
               render={({ field, fieldState }) => (
                 <FormItem>
-                  <FormLabel>Coupon Amount / Percentage</FormLabel>
+                  <FormLabel>Father / Husband Name*</FormLabel>
                   <FormControl>
-                    <Input {...field} type="number" min="0" />
+                    <Input {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -142,11 +145,11 @@ const GenerateCoupons = () => {
             ></FormField>
             <FormField
               control={form.control}
-              name="expiryDate"
+              name="dob"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    Expiry Date <span className="text-red-500">*</span>
+                    Date Of Birth <span className="text-red-500">*</span>
                   </FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
@@ -161,7 +164,7 @@ const GenerateCoupons = () => {
                           {field.value ? (
                             format(field.value, "PPP")
                           ) : (
-                            <span>Pick a date</span>
+                            <span>Date of Birth</span>
                           )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
@@ -182,13 +185,55 @@ const GenerateCoupons = () => {
                 </FormItem>
               )}
             />
+            
             <FormField
               control={form.control}
-              name="noOfCoupons"
+              name="couponType"
               render={({ field, fieldState }) => (
                 <FormItem>
                   <FormLabel>
-                    Number of Coupons <span className="text-red-500">*</span>
+                    Gender <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select Coupon type" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="male">Male</SelectItem>
+                      <SelectItem value="female">Female</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+
+            <FormField
+              control={form.control}
+              name="alter_contact_no1"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>Alternative Contect Number1</FormLabel>
+                  <FormControl>
+                    <Input {...field} type="number" min="0" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+            <FormField
+              control={form.control}
+              name="alter_contact_no2"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>
+                  Alternative Contect Number2 <span className="text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input {...field} type="number" min="0" />
@@ -197,8 +242,97 @@ const GenerateCoupons = () => {
                 </FormItem>
               )}
             ></FormField>
+
+            <FormField
+              control={form.control}
+              name="full_name"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+
+            <FormField
+              control={form.control}
+              name="full_name"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>Occupation</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+             
+             <FormField
+              control={form.control}
+              name="alter_contact_no2"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>
+                  Adhaar Number <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} type="number" min="0" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+
+<FormField
+              control={form.control}
+              name="full_name"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>Passport</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+
+            <FormField
+              control={form.control}
+              name="full_name"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>Pan Card</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+
+
+            <FormField
+              control={form.control}
+              name="full_name"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>Voter Id</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+             
+
             <div className="flex justify-end items-center py-2.5 pr-2.5">
-              <Button type="submit">Generate Coupons</Button>
+              <Button type="submit">Submit</Button>
             </div>
           </form>
         </Form>

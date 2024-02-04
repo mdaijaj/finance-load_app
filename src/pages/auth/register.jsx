@@ -107,7 +107,7 @@ const AgentPage = () => {
                             htmlFor="formGroupExampleInput"
                             className="form-label"
                         >
-                            User Role*
+                            User Role
                         </label>
                         <select
                             className="form-select"
@@ -200,7 +200,7 @@ const AgentPage = () => {
                             htmlFor="formGroupExampleInput"
                             className="form-label"
                         >
-                            User Role*
+                            Company*
                         </label>
                         <select
                             className="form-select"
@@ -217,17 +217,29 @@ const AgentPage = () => {
                     </div>
                 </div>
 
-                <div className="mb-2 row" style={{ paddingTop: "25px" }}>
+                <div className="mb-2 row" >
                     <div className="col-mdm-2">
-                        <button
+                    <button
                             className="btn btn-info"
                             onClick={handleSubmit}
                             style={{
-                                margin: "auto",
-                                width: "200px",
-                                borderRadius: "25px",
-                                height: "50px",
+                                margin: "100px",
+                                // width: "200px",
+                                // borderRadius: "25px",
+                                // height: "50px",
                             }}
+                        >
+                            Back
+                        </button>
+                        <button
+                            className="btn btn-info"
+                            onClick={handleSubmit}
+                            // style={{
+                            //     margin: "auto",
+                            //     width: "200px",
+                            //     borderRadius: "25px",
+                            //     height: "50px",
+                            // }}
                         >
                             Submit
                         </button>

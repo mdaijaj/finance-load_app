@@ -397,20 +397,22 @@ const DriverPayments = () => {
     setFirstRow((prev) => prev - 10);
     setLastRow((prev) => prev - 10);
   };
+
+
   return (
     <Container>
-      <Heading>Driver Payments</Heading>
+      <Heading>Manage Company</Heading>
       <div className="border rounded-md w-full overflow-x-scroll">
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Image</TableHead>
-              <TableHead>Transaction ID</TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead>Date</TableHead>
-              <TableHead>Amount</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Commission</TableHead>
+              <TableHead>Id</TableHead>
+              <TableHead>Company Name</TableHead>
+              <TableHead>Contact Number</TableHead>
+              <TableHead>Address</TableHead>
+              <TableHead>Pan</TableHead>
+              <TableHead>GSTIN</TableHead>
+              <TableHead>Status Of Firms</TableHead>
               <TableHead className="text-right">Action</TableHead>
             </TableRow>
           </TableHeader>
@@ -428,15 +430,15 @@ const DriverPayments = () => {
                       </Avatar>
                     }
                   </TableCell>
+                  <TableCell>{_.name}</TableCell>
                   <TableCell>
-                    #
                     {_.transaction_id.$oid.length >= 7
                       ? _.transaction_id.$oid.slice(0, 7) + "..."
                       : _.transaction_id.$oid}
                   </TableCell>
-                  <TableCell>{_.name}</TableCell>
                   <TableCell>{_.date}</TableCell>
                   <TableCell>{_.amount}$</TableCell>
+                  <TableCell>{_.commission}%</TableCell>
                   <TableCell>
                     <Badge
                       variant={
@@ -450,7 +452,6 @@ const DriverPayments = () => {
                       {_.status}
                     </Badge>
                   </TableCell>
-                  <TableCell>{_.commission}%</TableCell>
                   <TableCell className="text-right space-x-2 flex">
                     <Button className="rounded-3xl h-auto" id={_.id}>
                       <Edit className="w-3.5 h-3.5" />

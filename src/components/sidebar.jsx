@@ -122,20 +122,20 @@ const SideBar = () => {
         </CollapseableLink>
         <CollapseableLink
           buttonIcon={<User size={18} />}
-          buttonContent={"Drivers"}
+          buttonContent={"Customer Mgmt"}
           state={sideBarStates.driver}
         >
           <Link
             to="drivers/add"
             className="p-2 rounded-md text-black flex items-center gap-2"
           >
-            Add New Driver
+            Add New Customer
           </Link>
           <Link
             to="drivers/all"
             className="p-2 rounded-md text-black flex items-center gap-2"
           >
-            All Drivers
+            All Customer List
           </Link>
           <Link
             to="drivers/payments"
@@ -144,12 +144,12 @@ const SideBar = () => {
             Driver Payments
           </Link>
         </CollapseableLink>
-        <Link
+        {/* <Link
           to="passengers/all"
           className="px-2 py-3 rounded-md border border-transparent hover:border-slate-100 hover:bg-white text-black flex items-center gap-2"
         >
           <User2 size={18} /> <span className="text-sm">All Passengers</span>
-        </Link>
+        </Link> */}
         <CollapseableLink
           buttonIcon={<Car size={18} />}
           buttonContent={"Vehicle"}
@@ -176,7 +176,7 @@ const SideBar = () => {
         </CollapseableLink>
         <CollapseableLink
           buttonIcon={<Tags size={18} />}
-          buttonContent={"Coupons"}
+          buttonContent={"Finance"}
           state={sideBarStates.coupons}
         >
           <Link
@@ -192,7 +192,7 @@ const SideBar = () => {
             Coupons List
           </Link>
         </CollapseableLink>
-        <CollapseableLink
+        {/* <CollapseableLink
           buttonIcon={<CircleDollarSign size={18} />}
           buttonContent={"Fare Management"}
           state={sideBarStates.fareManagement}
@@ -209,7 +209,7 @@ const SideBar = () => {
           >
             Fare List
           </Link>
-        </CollapseableLink>
+        </CollapseableLink> */}
       </div>
     </div>
   );
