@@ -401,7 +401,7 @@ const DriverPayments = () => {
 
   return (
     <Container>
-      <Heading>Manage Company</Heading>
+      <Heading>Manage Company List</Heading>
       <div className="border rounded-md w-full overflow-x-scroll">
         <Table>
           <TableHeader>

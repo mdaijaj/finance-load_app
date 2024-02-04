@@ -59,14 +59,14 @@ const SideBar = () => {
         </div>
       </div>
       <div className="flex flex-col gap-1">
-        <Link
+        {/* <Link
           to="/dashboard"
           className="px-2 py-3 rounded-md border border-transparent hover:border-slate-100 hover:bg-white text-black flex items-center gap-2"
         >
           <LayoutPanelLeft size={18} />{" "}
           <span className="text-sm">Dashboard</span>
-        </Link>
-        <CollapseableLink
+        </Link> */}
+        {/* <CollapseableLink
           buttonIcon={<Mail size={18} />}
           buttonContent={"Email"}
           state={sideBarStates.email}
@@ -89,10 +89,10 @@ const SideBar = () => {
           >
             Compose Mail
           </Link>
-        </CollapseableLink>
-        <CollapseableLink
+        </CollapseableLink> */}
+        {/* <CollapseableLink
           buttonIcon={<CarTaxiFront size={18} />}
-          buttonContent={"Trip"}
+          buttonContent={"Manage Company"}
           state={sideBarStates.trip}
         >
           <Link
@@ -119,14 +119,14 @@ const SideBar = () => {
           >
             Route Map
           </Link>
-        </CollapseableLink>
+        </CollapseableLink> */}
         <CollapseableLink
           buttonIcon={<User size={18} />}
-          buttonContent={"Customer Mgmt"}
+          buttonContent={"Manage User"}
           state={sideBarStates.driver}
         >
           <Link
-            to="drivers/add"
+            to="drivers/add-user"
             className="p-2 rounded-md text-black flex items-center gap-2"
           >
             Add New Customer
@@ -137,41 +137,84 @@ const SideBar = () => {
           >
             All Customer List
           </Link>
+        </CollapseableLink>
+        <CollapseableLink
+          buttonIcon={<User size={18} />}
+          buttonContent={"Manage Company"}
+          state={sideBarStates.driver}
+        >
           <Link
-            to="drivers/payments"
+            to="vehicles/add"
             className="p-2 rounded-md text-black flex items-center gap-2"
           >
-            Driver Payments
+            Create New Company
+          </Link>
+          <Link
+            to="passengers/all"
+            className="p-2 rounded-md text-black flex items-center gap-2"
+          >
+            All Company List
           </Link>
         </CollapseableLink>
         {/* <Link
           to="passengers/all"
           className="px-2 py-3 rounded-md border border-transparent hover:border-slate-100 hover:bg-white text-black flex items-center gap-2"
         >
-          <User2 size={18} /> <span className="text-sm">All Passengers</span>
+          <User2 size={18} /> <span className="text-sm">Manage Company</span>
+        </Link>
+        <Link
+          to="company/all"
+          className="px-2 py-3 rounded-md border border-transparent hover:border-slate-100 hover:bg-white text-black flex items-center gap-2"
+        >
+          <User2 size={18} /> <span className="text-sm">Manage Branch</span>
         </Link> */}
         <CollapseableLink
+          buttonIcon={<User size={18} />}
+          buttonContent={"Customer Mgmt"}
+          state={sideBarStates.driver}
+        >
+          <Link
+            to="drivers/add"
+            className="p-2 rounded-md text-black flex items-center gap-2"
+          >
+            Create New Customer
+          </Link>
+          <Link
+            to="coupons/generate"
+            className="p-2 rounded-md text-black flex items-center gap-2"
+          >
+             Customer Info
+          </Link>
+          <Link
+            to="drivers/all"
+            className="p-2 rounded-md text-black flex items-center gap-2"
+          >
+            All Customer List
+          </Link>
+        </CollapseableLink>
+      
+        <CollapseableLink
           buttonIcon={<Car size={18} />}
-          buttonContent={"Vehicle"}
+          buttonContent={"Branch Manage"}
           state={sideBarStates.vehicle}
         >
           <Link
             to="vehicles/add"
             className="p-2 rounded-md text-black flex items-center gap-2"
           >
-            Add Vehicle Details
+            Add New Branch
           </Link>
           <Link
             to="vehicles/all"
             className="p-2 rounded-md text-black flex items-center gap-2"
           >
-            View All Vehicles
+            View All Branch
           </Link>
           <Link
             to="vehicles/edit"
             className="p-2 rounded-md text-black flex items-center gap-2"
           >
-            Edit Vehicle Details
+            Edit Branch Details
           </Link>
         </CollapseableLink>
         <CollapseableLink
@@ -183,13 +226,13 @@ const SideBar = () => {
             to="coupons/generate"
             className="p-2 rounded-md text-black flex items-center gap-2"
           >
-            Coupon Generation
+            Finance Generation
           </Link>
           <Link
             to="coupons/all"
             className="p-2 rounded-md text-black flex items-center gap-2"
           >
-            Coupons List
+            Finance List
           </Link>
         </CollapseableLink>
         {/* <CollapseableLink

@@ -586,7 +586,7 @@ const AllDrivers = () => {
             
                 <CardDescription className="mt-5 bg-slate-100 rounded-md px-2.5 pt-2.5 pb-5 flex flex-col gap-2.5 items-center z-10 relative">
                   <Avatar className="w-20 h-20 -mt-11 z-20 relative border-[4px] border-white">
-                    <AvatarImage src={_.profile_pic} alt={_.name} />
+                    <AvatarImage src={_.name.split(" ")[0][0]} alt={_.name} />
                     <AvatarFallback>{_.name.split(" ")[0][0]}</AvatarFallback>
                   </Avatar>
                   <CardDescription className="text-base text-black">

@@ -7,7 +7,7 @@ import {
 import GenerateCoupons from "./pages/coupons/generate-coupon";
 import ViewAllCoupons from "./pages/coupons/view-all-coupons";
 import Dashboard from "./pages/dashboard";
-import { AddDriver, AllDrivers, DriverPayments } from "./pages/drivers";
+import { AddDriver, AllDrivers,AddUser, DriverPayments } from "./pages/drivers";
 import CreateFare from "./pages/fares/create-fare";
 import ViewAllFares from "./pages/fares/view-all-fares";
 import Layout from "./pages/layout";
@@ -49,10 +49,10 @@ function Root() {
         <Route path="drivers">
           <Route index path="all" element={<AllDrivers />} />
           <Route path="add" element={<AddDriver />} />
-          <Route path="payments" element={<DriverPayments />} />
+          <Route path="add-user" element={<AddUser />} />
         </Route>
         <Route path="passengers">
-          <Route index path="all" element={<AllPassengers />} />
+          <Route index path="all" element={<DriverPayments />} />
         </Route>
         <Route path="vehicles">
           <Route index path="all" element={<ViewAllVehicles />} />
